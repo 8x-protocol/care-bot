@@ -20,14 +20,14 @@ firebase.initializeApp({
   databaseURL: "https://care-bot-4c42d.firebaseio.com"
 });
 
-// Matches "/echo [whatever]"
+// Command for giving love
+
 bot.onText(/\/givelove (?<=^|(?<=[^a-zA-Z0-9-_\.]))@([A-Za-z]+[A-Za-z0-9-_]+) ?(\d+$)?/, (msg, match) => {
 
         if (!admins.includes(msg.from.username)) {
             return;
         }
 
-        // 'match' is the result of executing the regexp above on the text content
         const chatId = msg.chat.id;
         const userToAward = match[1];
         const amount = match[2] || 1;
@@ -51,13 +51,14 @@ bot.onText(/\/givelove (?<=^|(?<=[^a-zA-Z0-9-_\.]))@([A-Za-z]+[A-Za-z0-9-_]+) ?(
         }
 });
 
+// Command for checking how much love you have
+
 bot.onText(/\/getlove (?<=^|(?<=[^a-zA-Z0-9-_\.]))@([A-Za-z]+[A-Za-z0-9-_]+)/, (msg, match) => {
 
     if (!admins.includes(msg.from.username)) {
         return;
     }
 
-    // 'match' is the result of executing the regexp above on the text content
     const chatId = msg.chat.id;
     const userToAward = match[1] || msg.from.username;
 
