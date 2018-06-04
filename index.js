@@ -55,10 +55,6 @@ bot.onText(/\/givelove (?<=^|(?<=[^a-zA-Z0-9-_\.]))@([A-Za-z]+[A-Za-z0-9-_]+) ?(
 
 bot.onText(/\/getlove (?<=^|(?<=[^a-zA-Z0-9-_\.]))@([A-Za-z]+[A-Za-z0-9-_]+)/, (msg, match) => {
 
-    if (!admins.includes(msg.from.username)) {
-        return;
-    }
-
     const chatId = msg.chat.id;
     const userToAward = match[1] || msg.from.username;
 
