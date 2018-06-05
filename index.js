@@ -8,7 +8,7 @@ const token = process.env.TELEGRAMTOKEN;
 const bot = new TelegramBot(token, {polling: true});
 
 // Admins
-const admins = ['kermankohli', 'axeleriksson', 'travisdmathis', 'ReneeZhou', 'KKKKKevin', 'andy_tee'];
+const admins = ['kermankohli', 'axeleriksson', 'travisdmathis', 'ReneeZhou', 'KevinL8x', 'andy_tee', 'wadesda'];
 
 // Firebase setup
 var firebase = require("firebase-admin");
